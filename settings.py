@@ -26,7 +26,7 @@ def init():
     irc_channel_bot = '#newsgrabberbot'
     irc_channel_main = '#newsgrabber'
     irc_nick = 'd_' + str(random.randint(0, 5000))
-    irc_server_name = 'irc.underworld.no'
+    irc_server_name = 'irc.efnet.org'
     irc_server_port = 6667
     dir_assigned_services = 'assigned_services'
     log_file_name = 'log.log'
