@@ -18,6 +18,7 @@ def main():
             subprocess.call('service rsync start')
         except OSError:
             print('failed to start rsync service')
+            subprocess.call('service rsync status')
     settings.init()
     settings.logger = log.Log(settings.log_file_name)
     settings.logger.daemon = True
