@@ -5,7 +5,7 @@ import time
 
 import psutil
 
-import service
+import discoveryservice
 import settings
 
 
@@ -171,12 +171,12 @@ class IRC(threading.Thread):
         elif command[0] == '!refresh' and len(command) == 3 \
               and check_name(command):
             if command[2].isdigit():
-                service.Service.global_refresh = int(command[2])
+                discoveryservice.Service.global_refresh = int(command[2])
                 self.send('PRIVMSG', '{user}: Set refresh to {refresh} '
                     'seconds.'
                     .format(user=user, refresh=command[2]), channel)
             elif command[2] == 'default':
-                service.Service.global_refresh = None
+                discoveryservice.Service.global_refresh = None
                 self.send('PRIVMSG', '{user}: Set refresh back to services '
                     'defaults.'
                     .format(user=user, refresh=command[2]), channel)
