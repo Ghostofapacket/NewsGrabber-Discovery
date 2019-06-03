@@ -19,10 +19,6 @@ import file
 import services
 import settings
 
-reload(sys)
-sys.setdefaultencoding("utf-8")
-
-
 class RunServices(threading.Thread):
 
     """Services are here started and stopped."""
