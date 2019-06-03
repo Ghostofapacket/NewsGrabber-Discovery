@@ -3,10 +3,6 @@ import json
 import importlib
 import sys
 
-importlib.reload(sys)
-sys.setdefaultencoding("utf-8")
-
-
 class File(object):
 
     """This class writes and reads files."""
