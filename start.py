@@ -2,7 +2,7 @@ import os
 import time
 import subprocess
 
-import service
+import discoveryservice
 import settings
 import irc
 import log
@@ -33,10 +33,10 @@ def main():
     settings.irc_bot.daemon = True
     settings.irc_bot.start()
     time.sleep(30)
-    settings.upload = service.Upload()
+    settings.upload = discoveryservice.Upload()
     settings.upload.daemon = True
     settings.upload.start()
-    settings.run_services = service.RunServices()
+    settings.run_services = discoveryservice.RunServices()
     settings.run_services.daemon = True
     settings.run_services.start()
     
