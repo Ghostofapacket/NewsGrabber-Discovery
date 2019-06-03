@@ -1,5 +1,6 @@
 import os
 import time
+import subprocess
 
 import service
 import settings
@@ -11,7 +12,13 @@ import tools
 def main():
     if os.path.isfile('UPDATE'):
         os.remove('UPDATE')
-
+    if os.system('service rsync status') != 0:
+        print('rsync not running; attempting to start')
+        try:
+            subprocess.call('service rsync start')
+        except OSError:
+            print('failed to start rsync service')
+            break
     settings.init()
     settings.logger = log.Log(settings.log_file_name)
     settings.logger.daemon = True
