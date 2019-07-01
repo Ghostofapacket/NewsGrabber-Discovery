@@ -22,7 +22,7 @@ def init():
     global target
 
     # variables to be changed
-    version = 20190603.01
+    version = 20190701.01
     irc_channel_bot = '#newsgrabber-bot'
     irc_channel_main = '#newsgrabber'
     irc_nick = 'd_' + str(random.randint(0, 5000))
