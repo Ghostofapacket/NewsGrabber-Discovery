@@ -22,7 +22,6 @@ def init():
     global target
 
     # variables to be changed
-    master
     version = 20190701.01
 
     irc_channel_bot = '#newsgrabber-bot'
